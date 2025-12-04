@@ -10,14 +10,12 @@ import io.ktor.server.netty.Netty
 import org.jetbrains.exposed.sql.Database
 
 fun main() {
-    embeddedServer(Netty, port = 9090, host = "0.0.0.0"){
+    embeddedServer(Netty, port = 3000, host = "0.0.0.0"){
         configureSerialization()
         database()
         configureRouting()
         statusPage()
     }.start(wait = true)
-
-
 }
 
 
