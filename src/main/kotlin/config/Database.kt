@@ -10,7 +10,7 @@ import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.transaction
 
-fun configureDatabases() {
+fun Application.database() {
     val config = HikariConfig().apply {
         jdbcUrl = "jdbc:postgresql://localhost:5432/EXTENSION"
         driverClassName = "org.postgresql.Driver"
