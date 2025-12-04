@@ -1,5 +1,8 @@
 package com.example.config
 
+import com.example.tables.AlbumTable
+import com.example.tables.ArtistaTable
+import com.example.tables.TrackTable
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 import io.ktor.server.application.Application
@@ -19,6 +22,6 @@ fun configureDatabases() {
     Database.connect(dataSource)
 
     transaction {
-        // SchemaUtils.create(Artistas, Albumes, Tracks)
+         SchemaUtils.create(ArtistaTable, AlbumTable, TrackTable)
     }
 }
